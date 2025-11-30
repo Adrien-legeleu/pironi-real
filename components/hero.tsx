@@ -1,18 +1,19 @@
-"use client";
+
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { BackgroundRippleEffect } from "./ui/background-ripple-effect";
 
 export function Hero() {
   return (
     <section className="flex min-h-[calc(100dvh-4rem)] flex-1 flex-col justify-between gap-12 overflow-x-hidden pt-8 sm:gap-16 sm:pt-16 lg:gap-24 lg:pt-24 bg-background">
-      <div className="mx-auto relative z-10 flex max-w-7xl flex-col items-center gap-8 px-4 text-center sm:px-6 lg:px-8">
+        <BackgroundRippleEffect /> 
+     <div className="mx-auto relative z-10 flex max-w-7xl flex-col items-center gap-8 px-4 text-center sm:px-6 lg:px-8">
         <div className="bg-secondary/30 backdrop-blur-sm flex items-center gap-2.5 rounded-full border px-3 py-2">
          <div className="bg-primary rounded-full p-1"/>
           <span className="text-muted-foreground text-sm font-medium">Disponible 24/7 en Île-de-France</span>
-        </div>
-
+        </div> 
         <h1 className="text-5xl leading-[1.1]  font-bold text-foreground sm:text-6xl lg:text-7xl">
           Pironi, Mobilité
           <br />
@@ -96,6 +97,7 @@ export function Hero() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
       </div>
+
     </section>
   );
 }
