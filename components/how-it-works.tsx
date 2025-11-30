@@ -139,87 +139,130 @@ export function HowItWorks() {
           {/* Steps */}
           <div className="grid md:grid-cols-3 gap-16 md:gap-8">
             {steps.map((step, index) => (
-              <MotionPreset
-                key={step.number}
-                fade
-                slide={{ direction: "up", offset: 60 }}
-                delay={0.2 + index * 0.2}
-                className="relative"
-              >
-                <div className="flex md:flex-col items-start md:items-center gap-6 md:gap-0">
-                  {/* Icon Circle - Timeline Node */}
-                  <div className="relative flex-shrink-0">
-                    {/* Pulsing Ring Animation */}
-                    <motion.div
-                      className="absolute inset-0 rounded-full bg-primary/20"
-                      animate={{
-                        scale: [1, 1.3, 1],
-                        opacity: [0.5, 0, 0.5],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        delay: index * 0.3,
-                      }}
-                    />
-                    
-                    {/* Icon Container */}
-                    <motion.div
-                      className="relative w-20 h-20 rounded-full bg-background flex items-center justify-center z-10"
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                    >
-                      {/* Gradient Border Effect */}
-                      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/60 via-primary/30 to-transparent p-[2px]">
-                        <div className="h-full w-full rounded-full bg-background" />
-                      </div>
+              <div key={step.number} className="relative">
+                {/* Desktop: with animation */}
+                <MotionPreset
+                  fade
+                  slide={{ direction: "up", offset: 60 }}
+                  delay={0.2 + index * 0.2}
+                  className="hidden md:block"
+                >
+                  <div className="flex flex-col items-center gap-0">
+                    {/* Icon Circle - Timeline Node */}
+                    <div className="relative flex-shrink-0">
+                      {/* Pulsing Ring Animation */}
+                      <motion.div
+                        className="absolute inset-0 rounded-full bg-primary/20"
+                        animate={{
+                          scale: [1, 1.3, 1],
+                          opacity: [0.5, 0, 0.5],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          delay: index * 0.3,
+                        }}
+                      />
                       
-                      <step.icon className="h-9 w-9 text-primary relative z-10" strokeWidth={1.5} />
-                    </motion.div>
+                      {/* Icon Container */}
+                      <motion.div
+                        className="relative w-20 h-20 rounded-full bg-background flex items-center justify-center z-10"
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        {/* Gradient Border Effect */}
+                        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/60 via-primary/30 to-transparent p-[2px]">
+                          <div className="h-full w-full rounded-full bg-background" />
+                        </div>
+                        
+                        <step.icon className="h-9 w-9 text-primary relative z-10" strokeWidth={1.5} />
+                      </motion.div>
 
-                    {/* Floating Number Badge */}
-                    <motion.div
-                      className="absolute -top-5 -right-5 w-12 h-12 z-10 rounded-2xl bg-primary text-primary-foreground flex items-center justify-center text-lg font-bold shadow-lg shadow-primary/20"
-                      initial={{ scale: 0, rotate: -180 }}
-                      whileInView={{ scale: 1, rotate: 0 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 200,
-                        delay: 0.4 + index * 0.2,
-                      }}
-                      whileHover={{ rotate: 12, scale: 1.15 }}
-                    >
-                      {step.number}
-                    </motion.div>
+                      {/* Floating Number Badge */}
+                      <motion.div
+                        className="absolute -top-5 -right-5 w-12 h-12 z-10 rounded-2xl bg-primary text-primary-foreground flex items-center justify-center text-lg font-bold shadow-lg shadow-primary/20"
+                        initial={{ scale: 0, rotate: -180 }}
+                        whileInView={{ scale: 1, rotate: 0 }}
+                        viewport={{ once: true }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 200,
+                          delay: 0.4 + index * 0.2,
+                        }}
+                        whileHover={{ rotate: 12, scale: 1.15 }}
+                      >
+                        {step.number}
+                      </motion.div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="mt-12 text-center">
+                      <motion.h3
+                        className="text-2xl md:text-3xl font-bold text-foreground mb-4"
+                        whileHover={{ scale: 1.02 }}
+                        transition={{ type: "spring", stiffness: 400 }}
+                      >
+                        {step.title}
+                      </motion.h3>
+                      <p className="text-muted-foreground text-lg leading-relaxed max-w-sm mx-auto">
+                        {step.description}
+                      </p>
+
+                      {/* Decorative Lines */}
+                      <motion.div
+                        className="mt-8 mx-auto w-16 h-1 bg-primary to-transparent rounded-full"
+                        initial={{ scaleX: 0 }}
+                        whileInView={{ scaleX: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.6 + index * 0.2 }}
+                      />
+                    </div>
                   </div>
+                </MotionPreset>
 
-                  {/* Content */}
-                  <div className="flex-1 md:mt-12 md:text-center">
-                    <motion.h3
-                      className="text-2xl md:text-3xl font-bold text-foreground mb-4"
-                      whileHover={{ scale: 1.02 }}
-                      transition={{ type: "spring", stiffness: 400 }}
-                    >
-                      {step.title}
-                    </motion.h3>
-                    <p className="text-muted-foreground text-lg leading-relaxed max-w-sm md:mx-auto">
-                      {step.description}
-                    </p>
+                {/* Mobile: without animation */}
+                <div className="md:hidden block">
+                  <div className="flex items-start gap-6">
+                    {/* Icon Circle - Timeline Node */}
+                    <div className="relative flex-shrink-0">
+                      {/* Icon Container - Static on mobile */}
+                      <div className="relative w-20 h-20 rounded-full bg-background flex items-center justify-center z-10">
+                        {/* Gradient Border Effect */}
+                        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/60 via-primary/30 to-transparent p-[2px]">
+                          <div className="h-full w-full rounded-full bg-background" />
+                        </div>
+                        
+                        <step.icon className="h-9 w-9 text-primary relative z-10" strokeWidth={1.5} />
+                      </div>
 
-                    {/* Decorative Lines */}
-                    <motion.div
-                      className="hidden md:block mt-8 mx-auto w-16 h-1 bg-primary to-transparent rounded-full"
-                      initial={{ scaleX: 0 }}
-                      whileInView={{ scaleX: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.8, delay: 0.6 + index * 0.2 }}
-                    />
+                      {/* Floating Number Badge - Keep animation */}
+                      <motion.div
+                        className="absolute -top-5 -right-5 w-12 h-12 z-10 rounded-2xl bg-primary text-primary-foreground flex items-center justify-center text-lg font-bold shadow-lg shadow-primary/20"
+                        initial={{ scale: 0, rotate: -180 }}
+                        whileInView={{ scale: 1, rotate: 0 }}
+                        viewport={{ once: true }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 200,
+                          delay: 0.4 + index * 0.2,
+                        }}
+                      >
+                        {step.number}
+                      </motion.div>
+                    </div>
+
+                    {/* Content - Static on mobile */}
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-foreground mb-4">
+                        {step.title}
+                      </h3>
+                      <p className="text-muted-foreground text-lg leading-relaxed">
+                        {step.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
-
-              
-              </MotionPreset>
+              </div>
             ))}
           </div>
         </div>

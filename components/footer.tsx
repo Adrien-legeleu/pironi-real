@@ -23,8 +23,8 @@ const Footer = () => {
 
         <div className='flex items-center justify-between gap-4 py-6 max-md:flex-col'>
           <a href='/' className="flex items-center gap-2">
-            <div className='bg-primary flex h-12 rounded-3xl w-32 items-center justify-center  '>
-              <Image src='/pironi/Logo_NoirRouge_CMJN.png' className='rounded-3xl' alt='Logo' width={200} height={200} />
+            <div className=' flex h-14 rounded-2xl w-44 items-center justify-center  '>
+              <Image src='/pironi/Plaque_NoirRouge_CMJN.png' className='rounded-2xl object-cover h-full w-full ' alt='Logo' width={200} height={200} />
             </div>
            
           </a>
@@ -33,7 +33,7 @@ const Footer = () => {
             <a href='/services' className="hover:text-foreground transition-colors">Services</a>
             <a href='/contact' className="hover:text-foreground transition-colors">Contact</a>
           </div>
-          <div className='flex items-center gap-4 text-muted-foreground'>
+          <div className='flex items-center gap-7 text-muted-foreground'>
             <a href='#' className="hover:text-foreground transition-colors">
               <FacebookIcon className='size-5' />
             </a>
