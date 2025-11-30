@@ -37,7 +37,7 @@ export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false)
 const contactAvatars = [
   "https://randomuser.me/api/portraits/men/10.jpg",
-  "https://randomuser.me/api/portraits/women/12.jpg",
+  "https://randomuser.me/api/portraits/women/9.jpg",
   "https://randomuser.me/api/portraits/men/32.jpg",
 ]
 
@@ -107,7 +107,7 @@ const contactAvatars = [
     key={index}
     className="w-10 h-10 rounded-full border-2 border-white overflow-hidden bg-gray-200"
   >
-    <Image
+    <img
       src={src}
       alt="Client Pironi"
       width={40}
