@@ -116,9 +116,9 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50/50 overflow-x-hidden w-full">
+    <div className="flex flex-col min-h-screen bg-gray-50/50">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 md:px-6 overflow-hidden">
+      <section className="relative pt-32 pb-20 px-4 md:px-6">
         <BackgroundRippleEffect />
         <div className="container mx-auto max-w-5xl text-center relative z-10">
           <Badge variant="outline" className="mb-6 px-4 py-1.5 text-sm border-pironi-anthracite/10 text-pironi-anthracite bg-white/50 backdrop-blur-sm">
