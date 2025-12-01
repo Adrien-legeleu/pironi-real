@@ -53,16 +53,32 @@ const contactAvatars = [
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true)
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500))
     
-    console.log(values)
-    toast.success("Demande envoyée", {
-      description: "Nous revenons vers vous rapidement avec une réponse personnalisée.",
-    })
-    
-    form.reset()
-    setIsSubmitting(false)
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (!response.ok) {
+        throw new Error('Erreur lors de l\'envoi');
+      }
+
+      toast.success("Demande envoyée", {
+        description: "Nous revenons vers vous rapidement avec une réponse personnalisée.",
+      })
+      
+      form.reset()
+    } catch (error) {
+      toast.error("Erreur", {
+        description: "Une erreur est survenue lors de l'envoi du message. Veuillez réessayer.",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
