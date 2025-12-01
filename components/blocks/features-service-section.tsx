@@ -145,7 +145,7 @@ const FeaturesServiceSection = ({ sections }: FeaturesServiceSectionProps) => {
                 </div>
 
                 {/* Image */}
-                <MotionPreset
+                {/* <MotionPreset
                   fade
                   slide={{ direction: 'up', offset: 50 }}
                   delay={0.6}
@@ -178,7 +178,7 @@ const FeaturesServiceSection = ({ sections }: FeaturesServiceSectionProps) => {
                       className='h-full w-full rounded-lg'
                     />
                   )}
-                </MotionPreset>
+                </MotionPreset> */}
               </div>
             )
           })}
