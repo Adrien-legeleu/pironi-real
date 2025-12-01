@@ -58,7 +58,7 @@ export function ImageSlider({
 
   return (
     <div
-      className={cn('relative w-full h-full  overflow-hidden rounded-lg group/slider', className)}
+      className={cn('relative sm:w-full w-screen h-full  overflow-hidden rounded-lg group/slider', className)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -67,7 +67,7 @@ export function ImageSlider({
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {images.map((src, index) => (
-          <div key={index} className="min-w-full h-full relative flex items-center justify-center">
+          <div key={index} className="min-w-full sm:min-w-0 h-full relative flex items-center justify-center">
             <Image
               src={src}
               alt={`${alt} - Image ${index + 1}`}
