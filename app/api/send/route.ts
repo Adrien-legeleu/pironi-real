@@ -10,7 +10,7 @@ export async function POST(request: Request) {
 
     const { data, error } = await resend.emails.send({
       from: 'Contact Form <contact@ikovaline.com>',
-      to: ['contact@ikovaline.com'], // Sending to Pironi's email
+      to: ['stanislashenry0@gmail.com'], // Sending to Pironi's email
       replyTo: email,
       subject: `Nouvelle demande de contact : ${serviceType}`,
       html: `

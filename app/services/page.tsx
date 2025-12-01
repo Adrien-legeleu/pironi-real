@@ -151,7 +151,7 @@ export default function ServicesPage() {
       <FeaturesServiceSection sections={sectionsData} />
 
       {/* Chauffeur Privé Section with Tabs */}
-      {/* <ChauffeurPriveSection /> */}
+      <ChauffeurPriveSection />
 
       {/* Reassurance Section */}
       <section className="py-20 bg-white border-t border-gray-100">
