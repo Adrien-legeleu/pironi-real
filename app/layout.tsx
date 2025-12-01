@@ -40,7 +40,8 @@ export default function RootLayout({
       >
         <SiteHeader />
         <main className="flex-grow">{children}</main>
-       
+        <Footer />
+        <Toaster />
       </body>
     </html>
   );
