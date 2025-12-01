@@ -128,7 +128,7 @@ const FeaturesServiceSection = ({ sections }: FeaturesServiceSectionProps) => {
                     {section.features.map((feature, featureIndex) => (
                       <MotionPreset
                         key={featureIndex}
-                        className='flex items-start gap-3'
+                        className='flex items-start gap-3 max-md:!opacity-100 max-md:!transform-none'
                         fade
                         slide
                         delay={0.9 + featureIndex * 0.2}
