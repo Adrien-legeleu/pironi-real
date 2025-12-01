@@ -39,7 +39,7 @@ export default function ConditionsPage() {
             <p>Pironi propose les services suivants :</p>
             <ul>
               <li><strong>Location sans permis :</strong> Location de véhicules sans permis pour courte et moyenne durée</li>
-              <li><strong>Transport & Logistique :</strong> Services de transport de marchandises et livraisons</li>
+              <li><strong>Location d’utilitaire :</strong> Location de véhicules utilitaires pour transport de marchandises</li>
               <li><strong>Chauffeur privé :</strong> Services de chauffeur avec véhicules de luxe (Rolls-Royce Phantom, Mercedes Maybach)</li>
             </ul>
 

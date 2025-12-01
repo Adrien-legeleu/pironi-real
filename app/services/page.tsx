@@ -82,35 +82,35 @@ export default function ServicesPage() {
         }
       ],
       image: {
-        src: '/cars/sanspermis.png',
+        src: ['/cars/sanspermis.png', '/cars/sanspermis2.webp', '/cars/sanspermis3.jpg', '/cars/sanspermis4.webp'],
         alt: 'Location Sans Permis - Citroën Ami'
       }
     },
     {
       badge: 'PROFESSIONNELS',
-      title: 'Transport & Logistique',
-      description: 'Une solution fiable pour vos marchandises. Nous assurons le transport sécurisé et ponctuel de vos biens, quelle que soit la distance.',
+      title: 'Location d’utilitaire',
+      description: 'Besoin d\'un transport de marchandise ? Louez nos utilitaires jaunes. Une solution fiable et flexible pour tous vos besoins de transport.',
       features: [
         {
-          title: 'Transport express:',
-          description: 'Livraison rapide sur toutes distances en France et Europe'
+          title: 'Camionnettes jaunes:',
+          description: 'Véhicules emblématiques et parfaitement entretenus'
         },
         {
-          title: 'Flotte adaptée:',
-          description: 'Véhicules de 3m³ à 20m³ pour tous types de marchandises'
+          title: 'Volumes variés:',
+          description: 'Véhicules de 3m³ à 20m³ pour tous types de chargements'
         },
         {
-          title: 'Suivi en temps réel:',
-          description: 'Tracez vos livraisons à chaque étape du trajet'
+          title: 'Location flexible:',
+          description: 'Courte ou longue durée selon vos besoins'
         },
         {
           title: 'Assurance incluse:',
-          description: 'Vos marchandises protégées durant tout le transport'
+          description: 'Roulez en toute sérénité avec notre couverture complète'
         }
       ],
       image: {
-        src: '/cars/logistique.webp',
-        alt: 'Transport & Logistique'
+        src: '/cars/logistique.jpeg',
+        alt: 'Location d’utilitaire'
       }
     }
   ];

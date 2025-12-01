@@ -2,6 +2,7 @@
 
 import { Check } from 'lucide-react'
 import { MotionPreset } from '@/components/ui/motion-preset'
+import { ImageSlider } from '@/components/ui/image-slider'
 
 type FeatureItem = {
   title: string
@@ -21,7 +22,7 @@ type ServiceSection = {
   features: FeatureItem[]
   pricing?: PricingRow[]
   image: {
-    src: string
+    src: string | string[]
     darkSrc?: string
     alt: string
   }
@@ -47,7 +48,7 @@ const FeaturesServiceSection = ({ sections }: FeaturesServiceSectionProps) => {
             const sectionId = section.title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, '').replace(/é/g, 'e')
 
             return (
-              <div key={sectionIndex} id={sectionId} className='grid items-center gap-12 lg:grid-cols-2 lg:gap-16 scroll-mt-24'>
+              <div key={sectionIndex} id={sectionId} className='grid gap-12 lg:grid-cols-2 lg:gap-16 scroll-mt-24'>
                 {/* Content */}
                 <div className={`space-y-6 ${contentOrder}`}>
                   <div className='space-y-4'>
@@ -149,26 +150,32 @@ const FeaturesServiceSection = ({ sections }: FeaturesServiceSectionProps) => {
                   slide={{ direction: imageDirection, offset: 50 }}
                   delay={0.6}
                   transition={{ duration: 0.8 }}
-                  className={`bg-muted group flex justify-center rounded-3xl p-6 transition-all duration-400 hover:p-0 lg:sticky lg:top-24 lg:self-start ${imageJustify} ${imageOrder}`}
+                  className={`bg-muted group flex justify-center aspect-[4/3] rounded-3xl p-6 transition-all duration-400 hover:p-0 ${imageJustify} ${imageOrder}`}
                 >
-                  {section.image.darkSrc ? (
+                  {Array.isArray(section.image.src) ? (
+                    <ImageSlider
+                      images={section.image.src}
+                      alt={section.image.alt}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : section.image.darkSrc ? (
                     <>
                       <img
                         src={section.image.src}
                         alt={section.image.alt}
-                        className='h-auto w-full rounded-lg dark:hidden'
+                        className='h-full w-full object-cover rounded-lg dark:hidden'
                       />
                       <img
                         src={section.image.darkSrc}
                         alt={section.image.alt}
-                        className='hidden h-auto w-full rounded-lg dark:block'
+                        className='hidden h-full w-full object-cover rounded-lg dark:block'
                       />
                     </>
                   ) : (
                     <img
                       src={section.image.src}
                       alt={section.image.alt}
-                      className='h-auto w-full rounded-lg'
+                      className='h-full w-full rounded-lg'
                     />
                   )}
                 </MotionPreset>

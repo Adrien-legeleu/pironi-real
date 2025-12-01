@@ -1,30 +1,33 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
 const services = [
   {
     id: 1,
-    title: "Sans Permis",
-    description: "Location courte / moyenne durée pour vos déplacements en ville. Pratique, simple, rapide.",
-    image: "/images/services/sans-permis.png",
-    slug: "location-sans-permis",
+    title: 'Sans Permis',
+    description:
+      'Location courte / moyenne durée pour vos déplacements en ville. Pratique, simple, rapide.',
+    image: '/cars/sanspermis2.webp',
+    slug: 'location-sans-permis',
   },
   {
     id: 2,
-    title: "Chauffeur",
-    description: "Trajets avec chauffeur pour vos déplacements du quotidien ou longue distance. Qualité, confort, ponctualité.",
-    image: "/images/services/chauffeur.png",
-    slug: "chauffeur-prive",
+    title: 'Chauffeur',
+    description:
+      'Trajets avec chauffeur pour vos déplacements du quotidien ou longue distance. Qualité, confort, ponctualité.',
+    image: '/cars/mercedes.png',
+    slug: 'chauffeur-prive',
   },
   {
     id: 3,
-    title: "Logistique",
-    description: "Livraison fiable et flexible pour vos colis et marchandises. Transport local / régional.",
-    image: "/images/services/logistique.png",
-    slug: "transport-logistique",
+    title: 'Location d’utilitaire',
+    description:
+      'Demande de devis. Besoin d\'un transport de marchandise ? Louez nos utilitaires jaunes.',
+    image: '/cars/logistique.jpeg',
+    slug: 'location-utilitaire',
   },
 ];
 

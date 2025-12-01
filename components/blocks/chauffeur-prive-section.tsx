@@ -4,6 +4,7 @@ import { Check } from 'lucide-react'
 import { MotionPreset } from '@/components/ui/motion-preset'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import Image from 'next/image'
+import { ImageSlider } from '@/components/ui/image-slider'
 
 type PricingRow = {
   duration: string
@@ -13,7 +14,7 @@ type PricingRow = {
 
 type VehicleData = {
   name: string
-  image: string
+  image: string | string[]
   features: string[]
   pricing: {
     mariage: PricingRow[]
@@ -25,7 +26,7 @@ type VehicleData = {
 const vehiclesData: VehicleData[] = [
   {
     name: 'Rolls-Royce Phantom',
-    image: '/cars/rollsroyce.png',
+    image: ['/cars/rollsroyce.png', '/cars/rollsroyce2.png', '/cars/rollsroyce3.png', '/cars/rollsroyce4.png', '/cars/rollsroyce5.png'],
     features: [
       'Portes « suicide » emblématiques avec parapluies intégrés',
       'Sellerie en cuir haut de gamme',
@@ -53,15 +54,15 @@ const vehiclesData: VehicleData[] = [
     },
   },
   {
-    name: 'Mercedes Classe S Maybach',
-    image: '/cars/mercedes.png',
+    name: 'Mercedes Classe S',
+    image: ['/cars/mercedes.png', '/cars/mercedes2.png', '/cars/mercedes3.png', '/cars/mercedes4.png'],
     features: [
+      'Location avec ou sans chauffeur',
+      'Pour évènement, studio, mariage, occasion',
       'Pack chauffeur (siège arrière s\'allongeant)',
       'Sièges arrière chauffant/ventilé/réglable',
       'Sellerie en cuir haut de gamme',
       'Système audio premium Burmester',
-      '👨‍✈️ Location exclusivement avec chauffeur',
-      '🚨 Pas de caution',
     ],
     pricing: {
       mariage: [
@@ -136,16 +137,24 @@ export default function ChauffeurPriveSection() {
                 value={vehicleIndex === 0 ? 'rolls-royce' : 'mercedes'}
                 className='mt-0'
               >
-                <div className='grid items-start gap-12 lg:grid-cols-2 lg:gap-16'>
+                <div className='grid gap-12 lg:grid-cols-2 lg:gap-16'>
                   {/* Image - Sticky on desktop */}
-                  <div className='bg-muted rounded-3xl p-6 order-2 lg:order-1 lg:sticky lg:top-24 lg:self-start'>
-                    <Image
-                      src={vehicle.image}
-                      alt={vehicle.name}
-                      width={600}
-                      height={400}
-                      className='h-auto w-full rounded-lg object-cover'
-                    />
+                  <div className='bg-muted aspect-[4/3] rounded-3xl p-6 order-2 lg:order-1'>
+                    {Array.isArray(vehicle.image) ? (
+                      <ImageSlider
+                        images={vehicle.image}
+                        alt={vehicle.name}
+                        className="w-full"
+                      />
+                    ) : (
+                      <Image
+                        src={vehicle.image}
+                        alt={vehicle.name}
+                        width={600}
+                        height={400}
+                        className='h-auto w-full rounded-lg object-cover'
+                      />
+                    )}
                   </div>
 
                   {/* Content */}
@@ -164,7 +173,7 @@ export default function ChauffeurPriveSection() {
                       </div>
 
                       <p className='text-sm text-muted-foreground italic mb-6'>
-                        🚗 Nos tarifs comprennent le chauffeur et la location du véhicule.
+                        🚗 Nos tarifs incluent le chauffeur pour les prestations avec chauffeur.
                         <br />
                         Les kilomètres sont calculés à partir de l'avenue Foch 75016
                       </p>
@@ -220,7 +229,7 @@ export default function ChauffeurPriveSection() {
                       {/* Journée */}
                       <div className='bg-muted rounded-2xl p-6 border'>
                         <h4 className='text-2xl font-semibold text-foreground mb-4'>
-                          Location avec chauffeur à la journée
+                          Location à la journée
                         </h4>
                         <div className='space-y-3'>
                           {vehicle.pricing.journee.map((row, index) => (
