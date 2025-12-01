@@ -150,7 +150,7 @@ const FeaturesServiceSection = ({ sections }: FeaturesServiceSectionProps) => {
                   slide={{ direction: imageDirection, offset: 50 }}
                   delay={0.6}
                   transition={{ duration: 0.8 }}
-                  className={`bg-muted group flex justify-center aspect-[4/3] rounded-3xl p-6 transition-all duration-400 hover:p-0 ${imageJustify} ${imageOrder}`}
+                  className={`bg-muted group flex justify-center aspect-[4/3] rounded-3xl p-6 transition-all duration-400 hover:p-0 ${imageJustify} ${imageOrder} lg:sticky lg:top-24 lg:self-start`}
                 >
                   {Array.isArray(section.image.src) ? (
                     <ImageSlider

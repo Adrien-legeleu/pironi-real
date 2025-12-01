@@ -116,7 +116,7 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50/50">
+    <div className="flex flex-col min-h-screen bg-gray-50/50 max-sm:overflow-hidden">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-4 md:px-6 overflow-hidden">
         <BackgroundRippleEffect />

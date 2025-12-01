@@ -17,7 +17,7 @@ export function ImageSlider({
   images,
   alt,
   className,
-  autoPlayInterval = 5000,
+  autoPlayInterval = 3000,
 }: ImageSliderProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);

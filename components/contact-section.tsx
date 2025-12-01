@@ -133,7 +133,7 @@ const contactAvatars = [
                     Zone desservie
                   </h4>
                   <p className="text-sm text-gray-600">
-                    Île-de-France, Val d'Europe et alentours.
+                    Saint-Cloud, Île-de-France et alentours.
                   </p>
                </div>
                <div className="bg-gray-50 rounded-2xl p-6">

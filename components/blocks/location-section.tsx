@@ -59,7 +59,7 @@ export default function LocationSection() {
           </motion.div>
 
           {/* Visual Element / 3D Card Effect */}
-          <div className="relative h-[400px] w-full [perspective:1000px]">
+          <div className="relative h-[400px] w-full max-sm:right-2 [perspective:1000px]">
             <motion.div
               initial={{ rotateY: -20, rotateX: 5 }}
               whileInView={{ rotateY: -10, rotateX: 5 }}
