@@ -137,9 +137,9 @@ export default function ChauffeurPriveSection() {
                 value={vehicleIndex === 0 ? 'rolls-royce' : 'mercedes'}
                 className='mt-0'
               >
-                <div className='grid gap-12 lg:grid-cols-2 lg:gap-16'>
+                <div className='grid gap-12 lg:grid-cols-2 w-full lg:gap-16'>
                   {/* Image - Sticky on desktop */}
-                  <div className='bg-muted aspect-[4/3] rounded-3xl p-6 order-2 lg:order-1 lg:sticky lg:top-24 lg:self-start'>
+                  <div className='bg-muted aspect-[4/3] w-full rounded-3xl p-6 order-2 lg:order-1 lg:sticky lg:top-24 lg:self-start'>
                     {Array.isArray(vehicle.image) ? (
                       <ImageSlider
                         images={vehicle.image}
