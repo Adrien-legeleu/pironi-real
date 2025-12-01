@@ -34,8 +34,8 @@ type FeaturesServiceSectionProps = {
 
 const FeaturesServiceSection = ({ sections }: FeaturesServiceSectionProps) => {
   return (
-    <section className='py-8 sm:py-16 lg:py-24 bg-background'>
-      <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
+    <section className='py-8 sm:py-16 w-screen lg:py-24 bg-background'>
+      <div className='sm:mx-auto max-w-7xl px-4 w-screen sm:px-6 lg:px-8'>
         <div className='space-y-24'>
           {sections.map((section, sectionIndex) => {
             const isOdd = sectionIndex % 2 === 0
@@ -48,7 +48,7 @@ const FeaturesServiceSection = ({ sections }: FeaturesServiceSectionProps) => {
             const sectionId = section.title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, '').replace(/é/g, 'e')
 
             return (
-              <div key={sectionIndex} id={sectionId} className='grid gap-12 lg:grid-cols-2 lg:gap-16 scroll-mt-24'>
+              <div key={sectionIndex} id={sectionId} className='grid gap-12 lg:grid-cols-2 lg:gap-16 sm:scroll-mt-24'>
                 {/* Content */}
                 <div className={`space-y-6 ${contentOrder}`}>
                   <div className='space-y-4'>
