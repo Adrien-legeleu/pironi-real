@@ -84,7 +84,7 @@ export function ImageSlider({
       <Button
         variant="ghost"
         size="icon"
-        className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white rounded-full opacity-0 group-hover/slider:opacity-100 transition-opacity duration-300"
+        className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white rounded-full opacity-100 sm:opacity-0 sm:group-hover/slider:opacity-100 transition-opacity duration-300"
         onClick={(e) => {
           e.preventDefault();
           prevSlide();
@@ -96,7 +96,7 @@ export function ImageSlider({
       <Button
         variant="ghost"
         size="icon"
-        className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white rounded-full opacity-0 group-hover/slider:opacity-100 transition-opacity duration-300"
+        className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white rounded-full sm:opacity-0 opacity-100 sm:group-hover/slider:opacity-100 transition-opacity duration-300"
         onClick={(e) => {
           e.preventDefault();
           nextSlide();
