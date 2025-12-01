@@ -85,7 +85,7 @@ const FeaturesServiceSection = ({ sections }: FeaturesServiceSectionProps) => {
                   </div>
 
                   {/* Pricing Table (if present) */}
-                  {section.pricing && (
+                  {/* {section.pricing && (
                     <MotionPreset
                       fade
                       slide
@@ -121,7 +121,7 @@ const FeaturesServiceSection = ({ sections }: FeaturesServiceSectionProps) => {
                         ))}
                       </div>
                     </MotionPreset>
-                  )}
+                  )} */}
 
                   {/* Features List */}
                   <div className='space-y-3.5'>
