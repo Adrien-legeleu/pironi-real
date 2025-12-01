@@ -146,10 +146,7 @@ const FeaturesServiceSection = ({ sections }: FeaturesServiceSectionProps) => {
 
                 {/* Image */}
                 <MotionPreset
-                  fade
-                  slide={{ direction: 'up', offset: 50 }}
-                  delay={0.6}
-                  transition={{ duration: 0.8 }}
+                
                   className={`bg-muted group flex max-sm:w-full justify-center sm:aspect-[4/3] rounded-3xl p-6 transition-all duration-400 hover:p-0 ${imageJustify} ${imageOrder} lg:sticky lg:top-24 lg:self-start`}
                 >
                   {Array.isArray(section.image.src) ? (
