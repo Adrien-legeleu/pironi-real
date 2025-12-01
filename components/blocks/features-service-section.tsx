@@ -85,7 +85,7 @@ const FeaturesServiceSection = ({ sections }: FeaturesServiceSectionProps) => {
                   </div>
 
                   {/* Pricing Table (if present) */}
-                  {/* {section.pricing && (
+                  {section.pricing && (
                     <MotionPreset
                       fade
                       slide
@@ -121,7 +121,7 @@ const FeaturesServiceSection = ({ sections }: FeaturesServiceSectionProps) => {
                         ))}
                       </div>
                     </MotionPreset>
-                  )} */}
+                  )}
 
                   {/* Features List */}
                   <div className='space-y-3.5'>
@@ -145,7 +145,7 @@ const FeaturesServiceSection = ({ sections }: FeaturesServiceSectionProps) => {
                 </div>
 
                 {/* Image */}
-                {/* <MotionPreset
+                <MotionPreset
                   fade
                   slide={{ direction: 'up', offset: 50 }}
                   delay={0.6}
@@ -178,7 +178,7 @@ const FeaturesServiceSection = ({ sections }: FeaturesServiceSectionProps) => {
                       className='h-full w-full rounded-lg'
                     />
                   )}
-                </MotionPreset> */}
+                </MotionPreset>
               </div>
             )
           })}
