@@ -46,7 +46,7 @@ export function Hero() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button size="lg" className="rounded-2xl px-8 h-12 text-lg shadow-lg" asChild>
-            <Link href="/contact">Demander un devis</Link>
+            <Link href="/reservation">Demander un devis</Link>
           </Button>
           <Button
             size="icon"

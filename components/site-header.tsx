@@ -23,6 +23,7 @@ import { cn } from "@/lib/utils";
 const navigationData = [
   { title: "Accueil", href: "/" },
   { title: "Services", href: "/services" },
+  { title: "Réserver", href: "/reservation" },
   { title: "Contact", href: "/contact" },
 ];
 
@@ -99,7 +100,7 @@ export function SiteHeader({ className }: { className?: string }) {
             </a>
           </Button>
           <Button className="rounded-2xl h-9" asChild>
-            <Link href="/contact">Demander un devis</Link>
+            <Link href="/reservation">Demander un devis</Link>
           </Button>
         </div>
 
@@ -122,7 +123,7 @@ export function SiteHeader({ className }: { className?: string }) {
             </a>
           </Button>
           <Button className="rounded-2xl text-xs h-9 px-4" asChild>
-            <Link href="/contact">Devis</Link>
+            <Link href="/reservation">Devis</Link>
           </Button>
 
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -159,7 +160,7 @@ export function SiteHeader({ className }: { className?: string }) {
                   asChild
                   onClick={() => setIsOpen(false)}
                 >
-                  <Link href="/contact">Demander un devis</Link>
+                  <Link href="/reservation">Demander un devis</Link>
                 </Button>
               </div>
             </SheetContent>
