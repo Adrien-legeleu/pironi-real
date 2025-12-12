@@ -76,7 +76,7 @@ export default function ReservationPage() {
             </MotionPreset>
 
             <MotionPreset fade blur slide={{ direction: "up", offset: 30 }} delay={0.1}>
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.1]">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.1]">
                     Réservez votre Citroen Ami <br/>
                     <span className="text-primary relative inline-block">
                         en quelques minutes

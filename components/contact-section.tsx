@@ -1,5 +1,7 @@
 "use client"
 
+import { useSearchParams } from "next/navigation"
+
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -30,16 +32,16 @@ const formSchema = z.object({
   message: z.string().min(10, { message: "Merci de détailler votre demande (min 10 caractères)." }),
 })
 
-
-
-
 export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false)
-const contactAvatars = [
-  "https://randomuser.me/api/portraits/men/10.jpg",
-  "https://randomuser.me/api/portraits/women/9.jpg",
-  "https://randomuser.me/api/portraits/men/32.jpg",
-]
+  const searchParams = useSearchParams()
+  const defaultService = searchParams.get('service') || 'transport'
+
+  const contactAvatars = [
+    "https://randomuser.me/api/portraits/men/10.jpg",
+    "https://randomuser.me/api/portraits/women/9.jpg",
+    "https://randomuser.me/api/portraits/men/32.jpg",
+  ]
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -47,6 +49,7 @@ const contactAvatars = [
       name: "",
       email: "",
       budget: "",
+      serviceType: defaultService,
       message: "",
     },
   })
@@ -226,9 +229,10 @@ const contactAvatars = [
                         <SelectValue placeholder="Sélectionnez..." />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="sans-permis">Location sans permis</SelectItem>
-                        <SelectItem value="transport">Transport de marchandises</SelectItem>
-                        <SelectItem value="chauffeur">Chauffeur privé</SelectItem>
+                        <SelectItem value="transport-marchandises">Transport de marchandises</SelectItem>
+                        <SelectItem value="location-sans-permis">Location sans permis</SelectItem>
+                        <SelectItem value="location-utilitaire">Location d'utilitaire</SelectItem>
+                        <SelectItem value="chauffeur-prive">Chauffeur privé</SelectItem>
                         <SelectItem value="autre">Autre projet de mobilité</SelectItem>
                       </SelectContent>
                     </Select>

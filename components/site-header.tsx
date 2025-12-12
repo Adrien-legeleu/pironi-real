@@ -23,7 +23,7 @@ import { cn } from "@/lib/utils";
 const navigationData = [
   { title: "Accueil", href: "/" },
   { title: "Services", href: "/services" },
-  { title: "Réserver", href: "/reservation" },
+  { title: "Citroën Ami", href: "/citroen-ami" },
   { title: "Contact", href: "/contact" },
 ];
 
@@ -66,16 +66,14 @@ export function SiteHeader({ className }: { className?: string }) {
 
         {/* Navigation */}
         <NavigationMenu className="max-md:hidden">
-          <NavigationMenuList className="flex-wrap justify-start gap-6">
+          <NavigationMenuList className="flex-wrap justify-start lg:gap-6 md:gap-3 gap-6">
             {navigationData.map((navItem) => (
               <NavigationMenuItem key={navItem.title}>
-                <Link href={navItem.href} legacyBehavior passHref>
-                  <NavigationMenuLink
-                    className="text-muted-foreground hover:text-primary px-3 py-1.5 text-sm font-medium hover:bg-transparent transition-colors"
-                  >
+                <NavigationMenuLink asChild className="text-muted-foreground hover:text-primary px-3 py-1.5 lg:text-sm md:text-xs text-sm font-medium hover:bg-transparent transition-colors">
+                  <Link href={navItem.href}>
                     {navItem.title}
-                  </NavigationMenuLink>
-                </Link>
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
             ))}
           </NavigationMenuList>
@@ -100,7 +98,7 @@ export function SiteHeader({ className }: { className?: string }) {
             </a>
           </Button>
           <Button className="rounded-2xl h-9" asChild>
-            <Link href="/reservation">Demander un devis</Link>
+            <Link href="/contact">Demander un Devis</Link>
           </Button>
         </div>
 
@@ -123,7 +121,7 @@ export function SiteHeader({ className }: { className?: string }) {
             </a>
           </Button>
           <Button className="rounded-2xl text-xs h-9 px-4" asChild>
-            <Link href="/reservation">Devis</Link>
+            <Link href="/contact">Demander un Devis</Link>
           </Button>
 
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -160,7 +158,7 @@ export function SiteHeader({ className }: { className?: string }) {
                   asChild
                   onClick={() => setIsOpen(false)}
                 >
-                  <Link href="/reservation">Demander un devis</Link>
+                  <Link href="/contact">Demander un Devis</Link>
                 </Button>
               </div>
             </SheetContent>

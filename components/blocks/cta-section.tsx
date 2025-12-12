@@ -33,21 +33,22 @@ const CTASection = () => {
               }}
             >
               <Image
-                src='/cars/mercedes.png'
+              src='/cars/sanspermis.png'
                 alt='App Preview'
                 width={500}
                 height={500}
                 className='max-lg:mx-auto max-lg:hidden aspect-[9/16] object-cover max-w-64 max-h-80 rounded-xl lg:absolute lg:-translate-y-1/2 lg:-translate-x-1/3 lg:scale-125 lg:left-1/2 z-20'
               />
               <Image
-                src='/cars/mercedes.png'
+              
+                src='/cars/sanspermis.png'
                 alt='App Preview'
                 width={500}
                 height={500}
                 className='max-lg:mx-auto lg:hidden object-cover max-h-80 max-w-64 aspect-[9/16] rounded-xl lg:absolute lg:-translate-y-1/2 lg:-translate-x-1/3 lg:scale-125 lg:left-1/2 z-20'
               />
               <Image
-                src='/cars/sanspermis.png'
+                 src='/cars/mercedes.png'
                 alt='App Preview'
                 width={500}
                 height={500}
@@ -64,7 +65,7 @@ const CTASection = () => {
                 slide={{ direction: 'up', offset: 50 }}
                 transition={{ duration: 0.5 }}
               >
-                Prêt à transformer votre mobilité ?
+                Un besoin de transport ou de mobilité ?
               </MotionPreset>
 
               <MotionPreset
@@ -76,7 +77,7 @@ const CTASection = () => {
                 delay={0.3}
                 transition={{ duration: 0.5 }}
               >
-                Rejoignez Pironi dès aujourd'hui et profitez d'une expérience de location et de transport premium, sans compromis.
+                De la livraison de marchandises à la location sans permis, nous avons la solution. Réponse sous 24h.
               </MotionPreset>
 
               <MotionPreset
@@ -87,8 +88,8 @@ const CTASection = () => {
                 transition={{ duration: 0.5 }}
               >
                 <Button asChild size='lg' variant='secondary' className='rounded-2xl text-base has-[>svg]:px-6 bg-white text-[#F61010] hover:bg-white/90'>
-                  <a href='#' className='inline-flex items-center gap-2'>
-                    Commencer maintenant
+                  <a href='/contact' className='inline-flex items-center gap-2'>
+                    Demander un Devis
                     <ArrowRightIcon className='size-5' />
                   </a>
                 </Button>

@@ -279,7 +279,7 @@ export function HowItWorks() {
             Prêt à démarrer votre projet de mobilité ?
           </p>
           <motion.a
-            href="/contact"
+            href="/reservation"
             className="inline-flex items-center gap-3 px-6 py-3 bg-primary text-primary-foreground rounded-2xl font-semibold text-sm relative overflow-hidden group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
@@ -296,7 +296,7 @@ export function HowItWorks() {
                 ease: "linear",
               }}
             />
-            <span className="relative z-10">Demander un devis</span>
+            <span className="relative z-10">Demander un Devis</span>
             <motion.svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"

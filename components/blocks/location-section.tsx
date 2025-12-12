@@ -72,12 +72,26 @@ export default function LocationSection() {
               <div className="absolute inset-0 rounded-3xl bg-gray-200 [transform:translateZ(-40px)_translateX(20px)_translateY(20px)]" />
               
               {/* Main Face */}
-              <div className="absolute inset-0 bg-background border border-gray-100 rounded-3xl p-8 shadow-[0_20px_50px_rgba(0,0,0,0.2)] [transform:translateZ(0)]">
-                <div className="absolute top-4 right-4 text-gray-300">
+              <div className="absolute inset-0 bg-background border border-gray-100 rounded-3xl p-8 shadow-[0_20px_50px_rgba(0,0,0,0.2)] [transform:translateZ(0)] overflow-hidden">
+                 {/* === LUXURY TEXTURE LAYERS (Ported from Services) === */}
+                 
+                 {/* 1. Underlying 3D Lighting Gradient */}
+                 <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-br from-[#ffffff] via-[#fff0f0] to-[#E3C3C3]/30" />
+
+                 {/* 2. Heavy Grain/Noise */}
+                 <div 
+                   className="absolute inset-0 z-0 opacity-[0.1] pointer-events-none mix-blend-multiply filter contrast-150" 
+                   style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}
+                 />
+
+                 {/* 3. Inner shadow for depth */}
+                 <div className="absolute inset-0 z-0 pointer-events-none rounded-3xl ring-1 ring-inset ring-black/5" />
+
+                <div className="absolute top-4 right-4 text-gray-300 z-10">
                   <Navigation className="w-12 h-12" />
                 </div>
                 
-                <div className="space-y-6 h-full flex flex-col justify-between">
+                <div className="space-y-6 h-full flex flex-col justify-between relative z-10">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                       <MapPin className="w-6 h-6" />
@@ -88,7 +102,7 @@ export default function LocationSection() {
                     </div>
                   </div>
 
-                  <div className="flex-1 w-full bg-gray-100 rounded-2xl overflow-hidden relative border border-gray-100">
+                  <div className="flex-1 w-full bg-gray-50/50 backdrop-blur-sm rounded-2xl overflow-hidden relative border border-gray-200/50">
                      {/* Abstract Map Representation */}
                      <div className="absolute inset-0 opacity-50">
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
@@ -104,11 +118,11 @@ export default function LocationSection() {
                   </div>
 
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-gray-100 rounded-xl p-4 border border-gray-100">
+                    <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-gray-100 shadow-sm">
                       <div className="text-2xl font-bold text-primary">15 min</div>
                       <div className="text-sm text-gray-500">Paris Centre</div>
                     </div>
-                    <div className="bg-gray-100 rounded-xl p-4 border border-gray-100">
+                    <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-gray-100 shadow-sm">
                       <div className="text-2xl font-bold text-primary">24/7</div>
                       <div className="text-sm text-gray-500">Disponibilité</div>
                     </div>

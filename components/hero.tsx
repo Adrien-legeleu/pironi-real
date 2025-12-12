@@ -12,13 +12,13 @@ export function Hero() {
      <div className="mx-auto relative z-10 flex max-w-7xl flex-col items-center gap-8 px-4 text-center sm:px-6 lg:px-8">
         <div className="bg-secondary/30 backdrop-blur-sm flex items-center gap-2.5 rounded-full border px-3 py-2">
          <div className="bg-primary rounded-full p-1"/>
-          <span className="text-muted-foreground text-sm font-medium">Disponible 24/7 en Île-de-France</span>
+          <span className="text-muted-foreground text-sm font-medium">Transport, Logistique & Mobilité sur mesure</span>
         </div> 
         <h1 className="text-5xl leading-[1.1]  font-bold text-foreground sm:text-6xl lg:text-7xl">
-          Pironi, Mobilité
+          L'Excellence du
           <br />
           <span className="relative text-primary">
-            d'Excellence
+            Transport & de la Logistique
             <svg
               width="223"
               height="12"
@@ -35,22 +35,22 @@ export function Hero() {
               />
             </svg>
           </span>{" "}
-          sur mesure.
+          pironi.
         </h1>
 
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-          Location sans permis, transport logistique et chauffeur privé.
+        <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          Spécialiste du transport de marchandises, de la location d'utilitaires et sans permis.
           <br />
-          Une même exigence de sérieux, de confort et de flexibilité.
+          Une solution fiable et adaptée à chaque exigence professionnelle ou personnelle.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button size="lg" className="rounded-2xl px-8 h-12 text-lg shadow-lg" asChild>
-            <Link href="/reservation">Demander un devis</Link>
+            <Link href="/contact">Demander un Devis</Link>
           </Button>
           <Button
             size="icon"
-            className="rounded-2xl w-12 h-12 bg-[#25D366] hover:bg-[#128C7E] text-white shadow-lg border-none"
+            className="rounded-2xl w-12 h-12 bg-[#25D366] hover:bg-[#128C7E]  text-white shadow-lg border-none"
             asChild
           >
             <a 
@@ -70,7 +70,7 @@ export function Hero() {
       {/* Image */}
       <div className="relative flex flex-row items-end justify-between gap-4 w-[105%] -translate-x-[2.5%] lg:min-h-[400px] md:min-h-[300px] min-h-[200px]  mt-auto">
         <Image
-          src="/cars/logistique.webp"
+              src="/cars/rollsroyce.png"
           alt="Pironi Services - Mercedes et Ami"
    width={600}
    height={600}
@@ -78,7 +78,9 @@ export function Hero() {
           priority
         />
         <Image
-          src="/cars/rollsroyce.png"
+   
+               src="/cars/mercedes.png"
+
           alt="Pironi Services - Mercedes et Ami"
    width={600}
    height={600}
@@ -86,7 +88,8 @@ export function Hero() {
           priority
         />
         <Image
-          src="/cars/mercedes.png"
+          
+           src="/cars/sanspermis.png"
           alt="Pironi Services - Mercedes et Ami"
    width={600}
    height={600}
@@ -95,7 +98,7 @@ export function Hero() {
           priority
         />
         <Image
-          src="/cars/sanspermis.png"
+      src="/cars/logistique.jpeg"
           alt="Pironi Services - Mercedes et Ami"
    width={600}
    height={600}

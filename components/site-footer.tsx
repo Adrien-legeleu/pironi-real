@@ -55,8 +55,8 @@ export function SiteFooter() {
               <Link href="#services" className="text-pironi-cream/80 hover:text-pironi-yellow transition-colors">
                 Nos Services
               </Link>
-              <Link href="#devis" className="text-pironi-cream/80 hover:text-pironi-yellow transition-colors">
-                Demande de devis
+              <Link href="/contact" className="text-pironi-cream/80 hover:text-pironi-yellow transition-colors">
+                Demander un Devis
               </Link>
               <Link href="#" className="text-pironi-cream/80 hover:text-pironi-yellow transition-colors">
                 Mentions légales

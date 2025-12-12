@@ -9,10 +9,45 @@ import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect
 export default function ServicesPage() {
   const sectionsData = [
     {
+      badge: 'PROFESSIONNELS',
+      title: 'Transport de Marchandises',
+      description: 'Une solution logistique complète pour les entreprises. Transport sécurisé, suivi en temps réel et flotte adaptée à tous vos volumes.',
+      features: [
+        {
+          title: 'Flotte diversifiée:',
+          description: 'Du véhicule léger au poids lourd, adapté à chaque type de chargement'
+        },
+        {
+          title: 'Suivi temps réel:',
+          description: 'Géolocalisation et tracking de vos marchandises en direct'
+        },
+        {
+          title: 'Chauffeurs qualifiés:',
+          description: 'Personnel formé et expérimenté pour une conduite sûre'
+        },
+        {
+          title: 'Assurance marchandises:',
+          description: 'Vos biens sont couverts jusqu\'à leur destination finale'
+        },
+        {
+          title: 'Flexibilité:',
+          description: 'Courses ponctuelles, régulières ou tournées de livraison'
+        },
+        {
+          title: 'Service express:',
+          description: 'Intervention rapide pour vos urgences logistiques'
+        }
+      ],
+      image: {
+        src: '/cars/logistique.jpeg',
+        alt: 'Transport de Marchandises'
+      }
+    },
+    {
       badge: 'PARTICULIERS & PROFESSIONNELS',
       title: 'Location Sans Permis',
       description: 'La liberté de mouvement pour tous. Des véhicules récents, confortables et faciles à conduire, disponibles immédiatement.',
-     pricing: [
+      pricing: [
   {
     period: 'Journée',
     subtitle: '70 km inclus',

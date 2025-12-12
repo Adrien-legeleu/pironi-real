@@ -241,8 +241,16 @@ const Features = () => {
               className='relative flex flex-col  items-center gap-18'
             >
               <span ref={span7Ref} className='size-0.5 max-lg:hidden' />
-              <div ref={div6Ref} className='bg-card overflow-hidden rounded-3xl border'>
-                <div className='px-6 pt-6 text-center'>
+              <div ref={div6Ref} className='bg-card overflow-hidden rounded-3xl border relative'>
+                 {/* === LUXURY TEXTURE LAYERS === */}
+                 <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-br from-[#ffffff] via-[#fff0f0] to-[#E3C3C3]/30" />
+                 <div 
+                   className="absolute inset-0 z-0 opacity-[0.08] pointer-events-none mix-blend-multiply filter contrast-150" 
+                   style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}
+                 />
+                 <div className="absolute inset-0 z-0 pointer-events-none rounded-3xl ring-1 ring-inset ring-black/5" />
+
+                <div className='px-6 pt-6 text-center relative z-10'>
                   <div className='flex items-center justify-center gap-1.5 text-lg font-medium'>
                     <ShieldCheckIcon className='size-4.5 shrink-0' />
                     Sécurité Maximale
@@ -251,8 +259,8 @@ const Features = () => {
                     Vos trajets et livraisons sont assurés avec les plus hauts standards de sécurité.
                   </p>
                 </div>
-                <div className='relative mt-2.5 sm:pl-6'>
-                  <div className='bg-primary/10 flex h-63 w-full items-center justify-center sm:rounded-tl-3xl p-4'>
+                <div className='relative mt-2.5 sm:pl-6 z-10'>
+                  <div className='bg-primary/10 backdrop-blur-sm flex h-63 w-full items-center justify-center sm:rounded-tl-3xl p-4 border-t border-l border-white/20'>
                      <ShieldCheckIcon className="size-32 text-primary/40" />
                   </div>
                 </div>
@@ -266,8 +274,16 @@ const Features = () => {
   className='relative flex flex-col items-center gap-18'
 >
   <span ref={span8Ref} className='size-0.5 max-lg:hidden' />
-  <div ref={div7Ref} className='bg-card overflow-hidden rounded-3xl border'>
-    <div className='px-6 pt-6 text-center'>
+  <div ref={div7Ref} className='bg-card overflow-hidden rounded-3xl border relative'>
+     {/* === LUXURY TEXTURE LAYERS === */}
+     <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-br from-[#ffffff] via-[#fff0f0] to-[#E3C3C3]/30" />
+     <div 
+       className="absolute inset-0 z-0 opacity-[0.12] pointer-events-none mix-blend-multiply filter contrast-150" 
+       style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}
+     />
+     <div className="absolute inset-0 z-0 pointer-events-none rounded-3xl ring-1 ring-inset ring-black/5" />
+
+    <div className='px-6 pt-6 text-center relative z-10'>
       <div className='flex items-center justify-center gap-1.5 text-lg font-medium'>
         <UserIcon className='size-4.5 shrink-0' />
         Suivi & Informations
@@ -278,7 +294,7 @@ const Features = () => {
     </div>
 
     <div className='mt-2.5 z-10 relative sm:pl-6'>
-      <div className='flex h-63 w-full flex-col justify-center bg-sky-600/10 px-4 sm:rounded-tl-3xl dark:bg-sky-400/40'>
+      <div className='flex h-63 w-full flex-col justify-center bg-sky-600/10 backdrop-blur-sm px-4 sm:rounded-tl-3xl dark:bg-sky-400/40 border-t border-l border-white/20'>
         <NotificationStack notifications={notifications} />
       </div>
     </div>
@@ -293,8 +309,16 @@ const Features = () => {
               className='relative flex flex-col items-center gap-18'
             >
               <span ref={span9Ref} className='size-0.5 max-lg:hidden' />
-              <div ref={div8Ref} className='bg-card overflow-hidden rounded-3xl border'>
-                <div className='px-6 pt-6 text-center'>
+              <div ref={div8Ref} className='bg-card overflow-hidden rounded-3xl border relative'>
+                 {/* === LUXURY TEXTURE LAYERS === */}
+                 <div className="absolute inset-0 z-0 pointer-events-none bg-gradient-to-br from-[#ffffff] via-[#fff0f0] to-[#E3C3C3]/30" />
+                 <div 
+                   className="absolute inset-0 z-0 opacity-[0.12] pointer-events-none mix-blend-multiply filter contrast-150" 
+                   style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}
+                 />
+                 <div className="absolute inset-0 z-0 pointer-events-none rounded-3xl ring-1 ring-inset ring-black/5" />
+
+                <div className='px-6 pt-6 text-center relative z-10'>
                   <div className='flex items-center justify-center gap-1.5 text-lg font-medium'>
                     <FileInputIcon className='size-4.5 shrink-0' />
                     Collaboration Efficace
@@ -303,8 +327,8 @@ const Features = () => {
                     Une équipe dédiée pour répondre à tous vos besoins logistiques.
                   </p>
                 </div>
-                <div className='relative mt-2.5 sm:pl-6'>
-                  <div className='flex h-63 w-full items-center justify-center bg-green-600/10 sm:rounded-tl-3xl dark:bg-green-400/40'>
+                <div className='relative mt-2.5 sm:pl-6 z-10'>
+                  <div className='flex h-63 w-full items-center justify-center bg-green-600/10 backdrop-blur-sm sm:rounded-tl-3xl dark:bg-green-400/40 border-t border-l border-white/20'>
                     <div className='flex min-h-20 flex-1 items-center justify-center -space-x-4'>
                       {avatars.map(item => (
                         <div key={item.name}>
