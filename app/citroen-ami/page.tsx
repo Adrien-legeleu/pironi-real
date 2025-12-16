@@ -274,7 +274,7 @@ export default function ReservationPage() {
       </section>
 
       {/* BOOKING SECTION */}
-       <div className="pironi-booqable w-full">
+       <div className="pironi-booqable bg-white rounded-[2rem] p-5 w-full max-w-5xl mx-auto">
       <BooqableLoader />
 
       <div className="w-full">

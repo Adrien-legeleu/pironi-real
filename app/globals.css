@@ -207,65 +207,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
-/* =========================
-   BOOQABLE — OVERRIDES PIR0NI
-   Scope: .pironi-booqable
-========================= */
 
-.pironi-booqable {
-  --pironi-primary: #9e2c2c;     /* ton rouge */
-  --pironi-primary-hover: #7d2323;
-  --pironi-underline: #2563eb;  /* le bleu “underline” */
-}
-
-/* Le datepicker = container */
-.pironi-booqable .booqable-datepicker {
-  position: relative !important;
-  border: 2px solid var(--pironi-primary) !important;
-  border-radius: 28px !important;
-  overflow: hidden !important; /* CLÉ : sinon tes coins intérieurs restent carrés */
-  background: #fff !important;
-}
-
-/* underline bleu sur hover/focus du bloc */
-.pironi-booqable .booqable-datepicker::after {
-  content: "";
-  position: absolute;
-  left: 20px;
-  right: 20px;
-  bottom: 10px;
-  height: 2px;
-  background: var(--pironi-underline);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 180ms ease;
-  pointer-events: none;
-}
-
-.pironi-booqable .booqable-datepicker:hover::after,
-.pironi-booqable .booqable-datepicker:focus-within::after {
-  transform: scaleX(1);
-}
-
-/* Les “inputs” Booqable sont souvent des boutons/divs → on cible large */
-.pironi-booqable .booqable-datepicker :is(input, button, select, textarea, [role="button"]) {
-  border: 0 !important;
-  outline: none !important;
-  box-shadow: none !important;
-  background: transparent !important;
-  font: inherit !important;
-}
-
-/* padding + hover underline par champ (plus visible que ton pseudo-element global) */
-.pironi-booqable .booqable-datepicker :is(input, button, [role="button"]) {
-  padding: 18px 20px !important;
-}
-
-.pironi-booqable .booqable-datepicker :is(input, button, [role="button"]):hover {
-  box-shadow: inset 0 -2px 0 0 var(--pironi-underline) !important;
-}
-
-/* Cards produits */
 .pironi-booqable .booqable-product,
 .pironi-booqable .booqable-product-list .booqable-product {
   border-radius: 28px !important;
@@ -275,18 +217,35 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Bouton “cart” flottant en bas à droite = #booqable-launcher (ID officiel) */
 #booqable-launcher {
-  background: var(--pironi-primary) !important;
+  background: #9E2C2C !important;
   border: 0 !important;
-  border-radius: 9999px !important;
+  border-radius: 20px !important;
   box-shadow: 0 18px 50px rgba(0,0,0,0.22) !important;
 }
 
 #booqable-launcher:hover {
-  background: var(--pironi-primary-hover) !important;
+  background: #7d2323 !important;
 }
 
-/* Selon le SVG, ça aide */
-#booqable-launcher svg,
-#booqable-launcher path {
-  fill: #fff !important;
+
+.booqable-component button,
+.booqable-component [role="button"] {
+  background-color: #9E2C2C !important;
+  border-color: #9E2C2C !important;
+  color: #fff !important; /* texte blanc sur fond rouge pour la lisibilité */
+}
+
+.booqable-component .selected,
+.booqable-component .active {
+  background-color: #9E2C2C !important;
+  border-color: #9E2C2C !important;
+  color: #fff !important;
+}
+#booqable-launcher {
+  background-color: #9E2C2C !important;
+  border-color: #9E2C2C !important;
+}
+#booqable-launcher svg {
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
 }
