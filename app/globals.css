@@ -215,17 +215,8 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid rgba(0,0,0,0.08) !important;
 }
 
-/* Bouton “cart” flottant en bas à droite = #booqable-launcher (ID officiel) */
-#booqable-launcher {
-  background: #9E2C2C !important;
-  border: 0 !important;
-  border-radius: 20px !important;
-  box-shadow: 0 18px 50px rgba(0,0,0,0.22) !important;
-}
 
-#booqable-launcher:hover {
-  background: #7d2323 !important;
-}
+
 
 
 .booqable-component button,
@@ -235,17 +226,3 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff !important; /* texte blanc sur fond rouge pour la lisibilité */
 }
 
-.booqable-component .selected,
-.booqable-component .active {
-  background-color: #9E2C2C !important;
-  border-color: #9E2C2C !important;
-  color: #fff !important;
-}
-#booqable-launcher {
-  background-color: #9E2C2C !important;
-  border-color: #9E2C2C !important;
-}
-#booqable-launcher svg {
-  fill: #ffffff !important;
-  stroke: #ffffff !important;
-}
