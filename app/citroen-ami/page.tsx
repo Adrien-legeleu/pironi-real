@@ -9,15 +9,16 @@ import { Check, Calendar, CreditCard, ShieldCheck, Clock, HelpCircle, ChevronDow
 import { Button } from "@/components/ui/button";
 import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect"; // Assuming path based on hero.tsx
 import { MotionPreset } from "@/components/ui/motion-preset"; 
+import BooqableLoader from "@/components/booquable/BooquableLoader";
 // Wait, I didn't verify if Accordion exists in ui folder. I saw list_dir output:
 // "dropdown-menu.tsx", "navigation-menu.tsx", "sheet.tsx", "tabs.tsx", "sonner.tsx"... 
 // I DON'T SEE ACCORDION. I will implement a custom simple accordion or just a toggle list to avoid creating new complex UI components if not present.
 // Actually, I can just build a simple FAQ list with motion.
 
-const CAL_URL = "https://cal.com/adrien-legeleux/pironi-reservation"; // Placeholder as requested, user to update.
+// Cal.com URL removed
 
 export default function ReservationPage() {
-  const [iframeLoaded, setIframeLoaded] = useState(false);
+  // const [iframeLoaded, setIframeLoaded] = useState(false); // Removed
   
   // Smooth scroll to booking
   const scrollToBooking = () => {
@@ -26,6 +27,34 @@ export default function ReservationPage() {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+  useEffect(() => {
+    // Fonction pour tenter d'initialiser Booqable
+    const initBooqable = () => {
+      const w = window as any;
+      if (w.Booqable && typeof w.Booqable.refresh === 'function') {
+        w.Booqable.refresh();
+      } else if (w.booqable && typeof w.booqable.refresh === 'function') {
+        w.booqable.refresh();
+      }
+    };
+
+    // 1. Tenter immédiatement avec un léger délai pour laisser le DOM se peindre
+    const timer = setTimeout(() => {
+        initBooqable();
+    }, 100);
+
+    // 2. Mettre en place un intervalle pour vérifier si le script charge tardivement
+    // On vérifie toutes les 200ms pendant 3 secondes
+    const intervalId = setInterval(initBooqable, 200);
+    const timeoutId = setTimeout(() => clearInterval(intervalId), 3000);
+
+    return () => {
+        clearTimeout(timer);
+        clearInterval(intervalId);
+        clearTimeout(timeoutId);
+    };
+  }, []);
+
 
   // Mobile Slider Logic
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -245,42 +274,21 @@ export default function ReservationPage() {
       </section>
 
       {/* BOOKING SECTION */}
-      <section id="booking" className="py-24 px-4 bg-background scroll-mt-20">
-          <div className="container mx-auto max-w-5xl">
-            <MotionPreset fade>
-              <div className="bg-background rounded-[2.5rem] shadow-xl border overflow-hidden relative min-h-[600px] md:min-h-[700px]">
-                  {/* Loading State */}
-                  <div className={`absolute inset-0 flex items-center justify-center bg-secondary/10 z-0 ${iframeLoaded ? 'hidden' : 'flex'}`}>
-                      <div className="flex flex-col items-center gap-4">
-                          <div className="w-10 h-10 border-4 border-primary border-t-transparent rounded-full animate-spin"/>
-                          <p className="text-muted-foreground font-medium">Chargement du calendrier...</p>
-                      </div>
-                  </div>
+       <div className="pironi-booqable w-full">
+      <BooqableLoader />
 
-                  <iframe
-                    src={CAL_URL}
-                    className="w-full h-full min-h-[700px] md:min-h-[800px] border-0 relative z-10"
-                    onLoad={() => setIframeLoaded(true)}
-                    loading="lazy"
-                    title="Réserver une Pironi Ami"
-                  />
-                  
-                  {/* Fallback button in case iframe is strictly blocked or issues */}
-                  <div className="absolute bottom-4 right-4 z-20">
-                     <Button variant="outline" size="sm" className="rounded-xl text-xs bg-background/80 backdrop-blur" asChild>
-                         <a href={CAL_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                            <ExternalLink className="w-3 h-3"/>
-                            Ouvrir dans un nouvel onglet
-                         </a>
-                     </Button>
-                  </div>
-              </div>
-              <p className="text-center text-xs text-muted-foreground mt-4">
-                  Powered by Cal.com - La réservation s'effectue sur une plateforme sécurisée.
-              </p>
-            </MotionPreset>
-          </div>
-      </section>
+      <div className="w-full">
+        <h3 className="text-lg font-semibold mb-4">1. Choisissez vos dates</h3>
+        <div className="booqable-datepicker" />
+      </div>
+
+      <div className="w-full mt-8">
+        <h3 className="text-lg font-semibold mb-4">2. Sélectionnez votre véhicule</h3>
+        <div className="booqable-product-list" />
+        {/* ou pour 1 véhicule précis :
+        <div className="booqable-product" data-id="citroen-ami" /> */}
+      </div>
+    </div>
 
       {/* INFOS & FAQ */}
       <section className="py-24 bg-secondary/10">
